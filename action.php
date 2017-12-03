@@ -9,10 +9,12 @@ print_r($json);
 foreach( $json['weather'] as $arr) {
     $weather = $arr['main'];
 }
-// foreach ($json['main'] as $varray) {
-//     $temp = $varray['temp'];
-// }
+
 $temp = $json['main']['temp']; 
 
-echo "<h1>Город: $json[name]</br>Погода: $weather<br>Температура: $temp</h1>";
+echo "<h1>Город: $json[name]</br>Погода: $weather<br>Температура: $temp F</h1>";
 
+if ($weather == 'Drizzle') {
+	echo "<img src='http://www.taminfo.ru/uploads/posts/2014-08/thumbs/1408209521_oblachno.jpg'>";
+}  
+?>
